@@ -1,11 +1,14 @@
 CARS_VIDEO_PATH = 'videos/cars.mp4'
 WIDTH_ID, HEIGHT_ID, = 3, 4
 YOLO_PATH = 'yolo_weights/yolov8n.pt'
-VIDEO_WIDTH_PIXELS = 720
-VIDEO_HEIGHT_PIXELS = 420
+VIDEO_WIDTH_PIXELS = 1080
+VIDEO_HEIGHT_PIXELS = 608
 FRAME_TITLE = 'Live Footage'
 MIN_TEXT_X = 0
 MIN_TEXT_Y = 40
+CONFIDENCE_THRESHOLD = 0.3
+
+CARS_AREA_MASK_PATH = 'masks/cars_area_mask.png'
 
 TO_BE_DETECTED_VEHICLES = ['car','truck','bus','motorcycle']
 

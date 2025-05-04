@@ -6,15 +6,23 @@ import constants as const
 
 
 def main():
+
     cap = cv2.VideoCapture(const.CARS_VIDEO_PATH)
     cap.set(const.WIDTH_ID, const.VIDEO_WIDTH_PIXELS)
     cap.set(const.HEIGHT_ID, const.VIDEO_HEIGHT_PIXELS)
 
     yolo_model = YOLO(const.YOLO_PATH)
 
+    area_mask = cv2.imread(const.CARS_AREA_MASK_PATH)
+
     while True:
 
         success, frame = cap.read()
+        frame = cv2.resize(frame, (const.VIDEO_WIDTH_PIXELS, const.VIDEO_HEIGHT_PIXELS))
+
+        shaded_frame = cv2.bitwise_and(frame,area_mask)
+
+
         yolo_results = yolo_model(frame, stream=True)  # frame yolo results
 
         for result in yolo_results:
@@ -33,17 +41,15 @@ def main():
                 confidence = box.conf[0]
                 # class
                 cls_name = const.YOLO_CLASSES[int(box.cls[0])]
-                # put text on frame
 
+                if cls_name in const.TO_BE_DETECTED_VEHICLES and confidence > const.CONFIDENCE_THRESHOLD: # Only detect vehicles
 
-
-                if cls_name in const.TO_BE_DETECTED_VEHICLES: # Only detect vehicles
                     cvzone.cornerRect(frame,(x1,y1,box_width,box_height,))
+                    # put text on frame
                     cvzone.putTextRect(frame,f"{cls_name} {confidence:.2f}",(max(const.MIN_TEXT_X,x1),max(const.MIN_TEXT_Y,y1)),1,1)
 
-
-
-        cv2.imshow(const.FRAME_TITLE, frame)
+        # cv2.imshow(const.FRAME_TITLE, frame)
+        cv2.imshow('shaded',shaded_frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):  # Press 'q' to exit
             break
