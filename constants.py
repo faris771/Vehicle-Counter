@@ -6,12 +6,18 @@ VIDEO_HEIGHT_PIXELS = 608
 FRAME_TITLE = 'Live Footage'
 MIN_TEXT_X = 0
 MIN_TEXT_Y = 40
-CONFIDENCE_THRESHOLD = 0.3
+CONFIDENCE_THRESHOLD = 0.2
+
+LIMIT_LINE = {
+    'x1': 250,
+    'y1': 297,
+    'x2': 550,
+    'y2': 297
+}
 
 CARS_AREA_MASK_PATH = 'masks/cars_area_mask.png'
 
-TO_BE_DETECTED_VEHICLES = ['car','truck','bus','motorcycle']
-
+TO_BE_DETECTED_VEHICLES = ['car', 'truck', 'bus', 'motorcycle', 'bicycle']
 
 YOLO_CLASSES = [
     "person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat",
