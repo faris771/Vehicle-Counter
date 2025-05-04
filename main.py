@@ -7,6 +7,7 @@ from util.sort import *
 
 
 def main():
+
     cap = cv2.VideoCapture(const.CARS_VIDEO_PATH)
     cap.set(const.WIDTH_ID, const.VIDEO_WIDTH_PIXELS)
     cap.set(const.HEIGHT_ID, const.VIDEO_HEIGHT_PIXELS)

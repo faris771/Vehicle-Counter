@@ -2,3 +2,4 @@ ultralytics
 opencv-python
 cvzone
 numpy
+filterpy==1.4.5
