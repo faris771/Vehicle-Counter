@@ -42,7 +42,7 @@ A side project crafted to **master computer vision** and software engineering pr
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/faris771/Car_Counter.git
+   git clone https://github.com/faris771/Vehicle_Counter.git
    cd vehicle-tracking
 
 2. Install dependencies:
