@@ -8,6 +8,9 @@ MIN_TEXT_X = 0
 MIN_TEXT_Y = 40
 CONFIDENCE_THRESHOLD = 0.2
 
+OUTPUT_PATH = 'output/result.avi'
+
+
 LIMIT_LINE = {
     'x1': 250,
     'y1': 297,

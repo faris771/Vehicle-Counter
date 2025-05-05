@@ -2,10 +2,10 @@ import cv2
 import cvzone
 from util.sort import *
 import constants as const
-from video_reader import VideoReader
-from yolo_detector import YOLODetector
-from tracker import Tracker
-from car_counter import CarCounter
+from app.video_reader import VideoReader
+from app.yolo_detector import YOLODetector
+from app.tracker import Tracker
+from app.car_counter import CarCounter
 
 
 class CarDetectionApp:

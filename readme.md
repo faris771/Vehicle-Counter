@@ -15,7 +15,7 @@ This project implements a vehicle detection and tracking system using YOLOv8 for
 - cvzone
 - ultralytics (for YOLOv8)
 - scikit-image (for SORT algorithm)
-- 
+- filterpy
 
 ## Installation
 1. Clone the repository:
